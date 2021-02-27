@@ -1,40 +1,42 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
+// Gets input from input field
 function getUserNumberInput() {
   return parseInt(userInput.value);
 }
 
+// Generates and writes calculation log
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
   const calcualtionDescription = `${currentResult} ${operator} ${enteredNumber}`;
-  outputResult(currentResult, calcualtionDescription)
+  outputResult(currentResult, calcualtionDescription) //from vendor.js
 }
 
 function add() {
   const enteredNumber = parseInt(userInput.value);
   const initialResult = currentResult;
-  currentResult = currentResult + enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
+  currentResult += enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
   outputResult('+', initialResult, enteredNumber);
 }
 
 function subtract() {
   const enteredNumber = parseInt(userInput.value);
   const initialResult = currentResult;
-  currentResult = currentResult - enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
+  currentResult -= enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
   outputResult('-', initialResult, enteredNumber);
 }
 
 function multiply() {
   const enteredNumber = parseInt(userInput.value);
   const initialResult = currentResult;
-  currentResult = currentResult * enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
+  currentResult *= enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
   outputResult('*', initialResult, enteredNumber);
 }
 
 function divide() {
   const enteredNumber = parseInt(userInput.value);
   const initialResult = currentResult;
-  currentResult = currentResult / enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
+  currentResult /= enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
   outputResult('/', initialResult, enteredNumber);
 }
 
