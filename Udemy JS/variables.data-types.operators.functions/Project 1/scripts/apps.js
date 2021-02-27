@@ -1,10 +1,43 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-function add() {
-  currentResult = currentResult + parseInt(userInput.value); // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
-  outputResult(currentResult, '');
+function getUserNumberInput() {
+  return parseInt(userInput.value);
 }
+
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+  const calcualtionDescription = `${currentResult} ${operator} ${enteredNumber}`;
+  outputResult(currentResult, calcualtionDescription)
+}
+
+function add() {
+  const enteredNumber = parseInt(userInput.value);
+  const initialResult = currentResult;
+  currentResult = currentResult + enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
+  outputResult('+', initialResult, enteredNumber);
+}
+
+function subtract() {
+  const enteredNumber = parseInt(userInput.value);
+  const initialResult = currentResult;
+  currentResult = currentResult - enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
+  outputResult('-', initialResult, enteredNumber);
+}
+
+function multiply() {
+  const enteredNumber = parseInt(userInput.value);
+  const initialResult = currentResult;
+  currentResult = currentResult * enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
+  outputResult('*', initialResult, enteredNumber);
+}
+
+function divide() {
+  const enteredNumber = parseInt(userInput.value);
+  const initialResult = currentResult;
+  currentResult = currentResult / enteredNumber; // parseInt converts test to number with no decimal. parseFloat converts to number with decimals.
+  outputResult('/', initialResult, enteredNumber);
+}
+
 
 addBtn.addEventListener('click', add);
 
